@@ -1,0 +1,29 @@
+name: Build Windows EXE
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: 下载代码
+      uses: actions/checkout@v4
+
+    - name: 安装Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: 安装依赖
+      run: |
+        pip install -r requirements.txt
+
+    - name: 生成EXE
+      run: pyinstaller --onefile --hidden-import=pymysql partner_agent_dify.py
+
+    - name: 上传成品
+      uses: actions/upload-artifact@v4
+      with:
+        name: partner_agent_dify
+        path: dist/partner_agent_dify.exe
