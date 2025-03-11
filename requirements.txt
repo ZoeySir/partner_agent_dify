@@ -1,0 +1,14 @@
+# 基础依赖
+python-docx==0.8.11      # Word文档处理
+pandas==2.0.3            # Excel数据处理
+openpyxl==3.1.2          # Excel文件读写引擎
+requests==2.31.0         # HTTP请求库
+python-dateutil==2.8.2   # 日期处理（pandas依赖）
+PyYAML==6.0.1            # YAML配置文件解析
+
+# 打包依赖
+pyinstaller==5.13.0      # 打包成exe的核心工具
+setuptools==68.2.2       # 包管理工具
+
+# Windows系统额外依赖（非必须）
+pywin32==306             # Windows系统API集成
