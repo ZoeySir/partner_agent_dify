@@ -39,7 +39,7 @@ def load_config(config_path='partner_config.yaml'):
 
 
 def read_word_file(file_path):
-    """读取Word文档并清理格式"""
+    """读取Word文档并清理格式 """
     try:
         doc = Document(file_path)
         text = []
